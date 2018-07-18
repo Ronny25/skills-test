@@ -15,14 +15,20 @@ export function withDataFetching(WrappedComponent) {
         isLoading: false,
         isLoaded: false,
         artistData: null,
-        eventData: null,
+        eventsData: null,
       };
 
       this.onHandleSearch = debounce(this.onHandleSearch.bind(this), 250);
     }
 
     async onHandleSearch(value) {
-      if (value === '') return;
+      if (value === '') {
+        if (!this.state.artistData) return;
+        return this.setState({
+          artistData: null,
+          eventsData: null,
+        });
+      }
 
       this.setState({ isLoading: true });
       let cachedValue = cache.get(value);
@@ -31,7 +37,7 @@ export function withDataFetching(WrappedComponent) {
 
         cachedValue = {
           artistData: await fetchHandle(`${baseUrl}/${value}?app_id=${appId}`),
-          eventData: await fetchHandle(`${baseUrl}/${value}/events?app_id=${appId}`),
+          eventsData: await fetchHandle(`${baseUrl}/${value}/events?app_id=${appId}`),
           date: new Date().getTime(),
         };
         cache.set(value, cachedValue);
@@ -41,7 +47,7 @@ export function withDataFetching(WrappedComponent) {
         isLoading: false,
         isLoaded: true,
         artistData: cachedValue.artistData,
-        eventData: cachedValue.eventData,
+        eventsData: cachedValue.eventsData,
       });
     }
 

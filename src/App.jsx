@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Card from './components/card';
+import Container from './components/container';
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -9,12 +8,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <div className="header-inner">
+            <img
+              src="https://www.home24.com/homevierundzwanzig/dist-production/images/home24_logo.svg"
+              className="App-logo"
+              alt="logo"
+            />
+            <button className="btn-search">&#x1F50D;</button>
+          </div>
         </header>
-        <div className="App-intro">
-          <Card />
-        </div>
+        <Container />
       </div>
     );
   }

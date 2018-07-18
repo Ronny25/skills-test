@@ -1,17 +1,105 @@
+html,
+body,
+body * {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  max-height: 100%;
+  /*animation: App-logo-spin infinite 20s linear;*/
+  /*height: 80px;*/
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  background: #354044;
+  text-align: right;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 28px;
+  line-height: 28px;
+  max-width: 1252px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 5%;
+}
+
+.btn-search {
+
+}
+
+.btn-clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input {
+  height: 70px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 25px;
+  width: 100%;
+  line-height: 70px;
+  border: none;
+  appearance: none;
+  outline: none;
+}
+
+.input-container {
+  background: #445257;
+  font-weight: 300;
+}
+
+.input-inner {
+  max-width: 1252px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 5%;
+  height: 70px;
+}
+
+.artist-image {
+  max-width: 100%;
+}
+
+.artist-image_container {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.facebook-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 35px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #01f;
+  border-bottom-left-radius: 4px;
+}
+
+.artist-name-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .3);
 }
 
 .App-title {
@@ -20,9 +108,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

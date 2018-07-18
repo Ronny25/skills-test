@@ -6,9 +6,13 @@ export function withManagement(WrappedComponent) {
       value: this.props.value || '',
     };
 
-    onChange = ({ target: { value = null } = {} }) => {
+    onChange = (data) => {
+      const value = typeof data === 'string'
+        ? data
+        : data.target.value;
+
       if (this.props.onChange) this.props.onChange(value);
-      this.setState({ value });
+      if (this.state.value !== value) this.setState({ value });
     };
 
     render() {
