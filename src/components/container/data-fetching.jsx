@@ -45,7 +45,7 @@ export function withDataFetching(WrappedComponent) {
 
       this.setState({
         isLoading: false,
-        isLoaded: true,
+        isLoaded: !!cachedValue.artistData && !!cachedValue.eventsData,
         artistData: cachedValue.artistData,
         eventsData: cachedValue.eventsData,
       });

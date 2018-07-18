@@ -1,26 +1,74 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { css } from 'emotion';
 
-import EventCard from '../event-card';
-
-class ArtistCard extends Component {
+class ArtistCard extends PureComponent {
   render() {
-    const { artistData, eventsData } = this.props;
+    const { artistData } = this.props;
+    if (!artistData) return null;
+
     return (
-      <div className="artist-card">
-        <div className="artist-image_container">
+      <div
+        className={css`
+          max-width: 720px;
+          margin: 0 auto;
+        `}
+      >
+        <div
+          className={css`
+            min-height: 500px;
+            max-height: 500px;
+            position: relative;
+            overflow: hidden;
+          `}
+        >
           <img
-            className="artist-image"
+            className={css`
+              max-width: 100%;
+              transform: translateY(-15%);
+            `}
             src={artistData.image_url}
             alt={artistData.name}
           />
-          <a className="facebook-link" href={artistData.facebook_page_url}>f</a>
-          <div className="artist-name-container">
-            <h3 className="artist-name">{artistData.name}</h3>
+          <a
+            className={css`
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              font-size: 35px;
+              line-height: 50px;
+              color: #fff;
+              text-decoration: none;
+              background-color: #01f;
+              transition: background-color 250ms;
+              border-bottom-left-radius: 4px;
+              &:hover {
+                background-color: #4d59ff;
+              }
+            `}
+            href={artistData.facebook_page_url}
+          >
+            f
+          </a>
+          <div
+            className={css`
+              height: 65px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background-color: rgba(255, 255, 255, .3);
+            `}
+          >
+            <h2 className="artist-name">
+              {artistData.name}
+            </h2>
           </div>
-        </div>
-        <div>
-          {eventsData.map(event => <EventCard event={event} />)}
         </div>
       </div>
     );
@@ -33,7 +81,6 @@ ArtistCard.propTypes = {
     facebook_page_url: PropTypes.string,
     name: PropTypes.string,
   }),
-  eventsData: PropTypes.arrayOf(PropTypes.shape({}))
 };
 
 export default ArtistCard;
