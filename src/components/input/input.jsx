@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-// import { withManagement } from './input-management';
+import { withManagement } from './input-management';
 
-class Input extends Component {
+class Input extends PureComponent {
   render() {
     return (
       <input
@@ -14,4 +14,4 @@ class Input extends Component {
   }
 }
 
-export default Input;
+export default withManagement(Input);

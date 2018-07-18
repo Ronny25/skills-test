@@ -6,11 +6,12 @@ export function withManagement(WrappedComponent) {
       value: this.props.value || '',
     };
 
-    onChange = ({ target: { value = null } = {} }) => this.setState({ value });
+    onChange = ({ target: { value = null } = {} }) => {
+      if (this.props.onChange) this.props.onChange(value);
+      this.setState({ value });
+    };
 
     render() {
-      // const { modalRef, ...restProps } = this.props;
-
       return (
         <WrappedComponent
           {...this.props}
