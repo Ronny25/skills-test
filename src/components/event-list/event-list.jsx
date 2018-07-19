@@ -10,7 +10,7 @@ class EventList extends PureComponent {
 
     return (
       <React.Fragment>
-        <h3>Upcoming Events</h3>
+        <h3>{eventsData.length > 0 ? 'Upcoming Events' : 'No Events'}</h3>
         <div
           className={css`
             max-width: 1252px;

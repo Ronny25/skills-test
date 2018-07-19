@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 
 import Container from './components/container';
+import logo from './logo-home.png';
 
 const App = () => (
   <div
@@ -30,7 +31,7 @@ const App = () => (
         `}
       >
         <img
-          src="https://www.home24.com/homevierundzwanzig/dist-production/images/home24_logo.svg"
+          src={logo}
           className={css`
             max-height: 100%;
           `}

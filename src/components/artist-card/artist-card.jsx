@@ -20,6 +20,11 @@ class ArtistCard extends PureComponent {
             max-height: 500px;
             position: relative;
             overflow: hidden;
+
+            @media (max-width: 720px) {
+              min-height: 85vw;
+              max-height: 85vw;
+            }
           `}
         >
           <img
@@ -41,15 +46,16 @@ class ArtistCard extends PureComponent {
               line-height: 50px;
               color: #fff;
               text-decoration: none;
-              background-color: #01f;
+              background-color: #4267b2;
               transition: background-color 250ms;
               border-bottom-left-radius: 4px;
 
               &:hover {
-                background-color: #4d59ff;
+                background-color: #4267b2c7;
               }
             `}
             href={artistData.facebook_page_url}
+            rel="nofollow noopener"
           >
             f
           </a>
@@ -63,7 +69,7 @@ class ArtistCard extends PureComponent {
               right: 0;
               bottom: 0;
               left: 0;
-              background-color: rgba(255, 255, 255, .3);
+              background-color: rgba(255, 255, 255, .5);
             `}
           >
             <h2 className="artist-name">
