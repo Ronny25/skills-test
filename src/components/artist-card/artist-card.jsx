@@ -44,6 +44,7 @@ class ArtistCard extends PureComponent {
               background-color: #01f;
               transition: background-color 250ms;
               border-bottom-left-radius: 4px;
+
               &:hover {
                 background-color: #4d59ff;
               }

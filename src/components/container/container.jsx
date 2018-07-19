@@ -6,7 +6,7 @@ import { withDataFetching } from './data-fetching';
 import LoadingSpinner from '../loading-spinner';
 import Input from '../input';
 import ArtistCard from '../artist-card';
-import EventCard from '../event-card';
+import EventList from '../event-list';
 
 const Container = ({
   onHandleSearch,
@@ -46,21 +46,8 @@ const Container = ({
       {isLoaded &&
         <React.Fragment>
           <ArtistCard artistData={artistData} />
-          {eventsData &&
-            <React.Fragment>
-              <h3>Upcoming Events</h3>
-              <div
-                className={css`
-                  max-width: 1252px;
-                  margin: 0 auto;
-                  display: flex;
-                  justify-content: space-evenly;
-                  flex-wrap: wrap;
-                `}
-              >
-                {eventsData.map(event => <EventCard key={event.id} event={event} />)}
-              </div>
-            </React.Fragment>
+          {Array.isArray(eventsData) &&
+            <EventList eventsData={eventsData} />
           }
         </React.Fragment>
       }
@@ -69,6 +56,7 @@ const Container = ({
 );
 
 Container.propTypes = {
+  onHandleSearch: PropTypes.func,
   isLoading: PropTypes.bool,
   isLoaded: PropTypes.bool,
   artistData: PropTypes.shape({}),

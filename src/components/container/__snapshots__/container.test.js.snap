@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container /> should renders correctly 1`] = `
+<div>
+  <div
+    className="css-otbafj"
+  >
+    <div
+      className="css-1omkubd"
+    >
+      <input
+        className="css-1wwkbse"
+        onChange={[Function]}
+        placeholder="What are you looking for?"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="css-ihdrx8"
+  />
+</div>
+`;

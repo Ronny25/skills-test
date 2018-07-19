@@ -47,15 +47,21 @@ class EventCard extends PureComponent {
             }
           `}
         >
-          <div className="event-info event-date">
-            <span>Date: {new Date(datetime).toLocaleString()}</span>
-          </div>
-          <div className="event-info">
-            <span>City: {city}</span>
-          </div>
-          <div className="event-info">
-            <span>Country: {country}</span>
-          </div>
+          {datetime &&
+            <div className="event-info event-date">
+              <span>Date: {new Date(datetime).toLocaleString()}</span>
+            </div>
+          }
+          {city &&
+            <div className="event-info">
+              <span>City: {city}</span>
+            </div>
+          }
+          {country &&
+            <div className="event-info">
+              <span>Country: {country}</span>
+            </div>
+          }
         </div>
       </div>
     );
