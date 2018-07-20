@@ -51,7 +51,7 @@ class ArtistCard extends PureComponent {
               border-bottom-left-radius: 4px;
 
               &:hover {
-                background-color: #4267b2c7;
+                background-color: #4c77ce;
               }
             `}
             href={artistData.facebook_page_url}

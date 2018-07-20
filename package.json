@@ -12,6 +12,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-loadable": "^5.4.0",
+    "react-on-visible": "^1.5.0",
     "react-scripts": "1.1.4",
     "react-test-renderer": "^16.4.1"
   },
