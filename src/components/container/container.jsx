@@ -59,9 +59,9 @@ const Container = ({
           position: relative;
       `}
       >
+        {isLoading && <LoadingSpinner />}
         {isLoaded &&
           <React.Fragment>
-            {isLoading && <LoadingSpinner />}
             <LoadableArtistCard artistData={artistData} />
             {Array.isArray(eventsData) &&
               <LoadableEventList eventsData={eventsData} />

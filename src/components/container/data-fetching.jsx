@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import debounce from 'lodash.debounce';
 
 import cache from '../../utils/cache';
@@ -8,7 +8,7 @@ import { appId, baseUrl } from '../../utils/constants';
 const threeHours = 1000 * 60 * 60 * 3;
 
 export function withDataFetching(WrappedComponent) {
-  class WithDataFetching extends React.Component {
+  class WithDataFetching extends Component {
     constructor(props, ctx) {
       super(props, ctx);
       this.state = {

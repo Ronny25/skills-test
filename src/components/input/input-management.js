@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export function withManagement(WrappedComponent) {
   class WithManagement extends React.Component {
@@ -25,6 +26,11 @@ export function withManagement(WrappedComponent) {
       );
     }
   }
+
+  WithManagement.propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+  };
 
   const componentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
   WithManagement.displayName = `WithManagement(${componentName})`;
