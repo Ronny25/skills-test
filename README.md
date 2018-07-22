@@ -14,8 +14,9 @@
 - Styling - *Emotion*
 
 **Bonus Features**
-- Cache​ (each api response is cached for 3 hours)
-- Deploy​ (add deploy to gh-pages [Skills Test](https://ronny25.github.io/skills-test))
+- Some features (add `react-loadable` for splitting components which are not using at first app mount, `react-on-visible` for **EventCard** appearing animation);
+- Cache​ (each api response is cached for 3 hours);
+- Deploy​ (add deploy to gh-pages [Skills Test](https://ronny25.github.io/skills-test)).
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -41,6 +42,10 @@ Launches the test runner in the interactive watch mode.<br>
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### `npm run deploy`
+
+Builds the app for production to the `build` folder and deploys it to **gh-pages** branch of the repo.
 
 ### `npm run eject`
 
