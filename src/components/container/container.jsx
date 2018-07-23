@@ -6,6 +6,7 @@ import Loadable from 'react-loadable';
 import { withDataFetching } from './data-fetching';
 import LoadingSpinner from '../loading-spinner';
 import Input from '../input';
+import EventCard from '../event-card';
 
 const LoadableArtistCard = Loadable({
   loader: () => import('../artist-card'),
@@ -64,7 +65,11 @@ const Container = ({
           <React.Fragment>
             <LoadableArtistCard artistData={artistData} />
             {Array.isArray(eventsData) &&
-              <LoadableEventList eventsData={eventsData} />
+              <LoadableEventList
+                eventsData={eventsData}
+              >
+                {event => <EventCard key={event.id} event={event} />}
+              </LoadableEventList>
             }
           </React.Fragment>
         }
